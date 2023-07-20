@@ -5,8 +5,7 @@
 import csv
 
 # define file path
-#p = '/Users/roeldelossantos/Desktop/Module_3/election_data.csv'
-p = 'Resources/budget_data.csv'
+p = 'Resources/election_data.csv'
 
 tVotes = 0
 vpc = {}
@@ -33,8 +32,9 @@ for k, v in vpc.items():
 print('-' * 50, '\n')
 print('Winner : ',max(vpc, key = lambda x: x[1]))    
 
-# Output result to txt file
-with open('election_results.txt', 'w') as t:
+# Write Financial analysis summary to txt file 
+outputfile = 'election_results.txt'
+with open(outputfile, 'w') as t:
     t.write('Election Result'+ '\n')
     t.write('-' * 50+ '\n')
     t.write('Total Votes: ' + str(tVotes)+ '\n')
@@ -43,6 +43,5 @@ with open('election_results.txt', 'w') as t:
         pct = v /(sum(vpc.values())) 
         t.write(k + ': ' + '{:.3%}'.format(pct)+ " (" +  str(v) + ")"+ '\n')
         t.write('\n')
-        #f.write(candidate + ": " + "{:.3%}".format(votes/totalVotes) + "   (" +  str(votes) + ")")
     t.write('-' * 50+ '\n')
     t.write('Winner : '+ max(vpc, key = lambda x: x[1]))
