@@ -6,8 +6,8 @@ import os
 import csv 
 
 # Define the file path
-#p = 'Resources/budget_data.csv'
-p = '/Users/roelj/OneDrive/Desktop/school/Python_Challenge/PyBank/Resources/budget_data.csv'
+p = 'Resources/budget_data.csv'
+
 
 # Initialize variables 
 count = 0
